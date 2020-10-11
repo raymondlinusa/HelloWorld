@@ -2,6 +2,7 @@ package com.example.helloworld;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 //                Toast.makeText(getApplicationContext(), username.getText()+" dan "+password.getText(), Toast.LENGTH_LONG).show();
                 if (username.getText().toString().equals("admin") && password.getText().toString().equals("admin")){
-                    setContentView(R.layout.home_screen);
+                    successLogin(view);
                 }
                 else{
                     failLogin();
@@ -36,6 +37,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+    private void successLogin(View view){
+        Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+        startActivity(intent);
+    }
+
     private void failLogin(){
         Toast.makeText(getApplicationContext(), "username atau password salah", Toast.LENGTH_LONG).show();
     }
