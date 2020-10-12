@@ -9,14 +9,14 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     private TextView username, password;
     private Button btnLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
         //simpan value dari kolom txtUsername dan txtPassword
         username = findViewById(R.id.txtUsername);
         password = findViewById(R.id.txtPassword);
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     private void successLogin(View view){
-        Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+        Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
         startActivity(intent);
     }
 

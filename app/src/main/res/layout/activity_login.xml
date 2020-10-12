@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_vertical"
-    tools:context=".MainActivity"
+    tools:context=".LoginActivity"
     android:background="@color/colorAccent">
 
     <TextView
