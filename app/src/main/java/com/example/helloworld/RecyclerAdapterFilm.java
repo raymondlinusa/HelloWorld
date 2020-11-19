@@ -14,14 +14,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import static android.graphics.text.LineBreaker.JUSTIFICATION_MODE_INTER_WORD;
 
-public class RecyclerAdapter<MyViewHolder> extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder> {
+public class RecyclerAdapterFilm<MyViewHolder> extends RecyclerView.Adapter<RecyclerAdapterFilm.MyViewHolder> {
     String[] judul;
     String[] sinopsis;
     int[] gambar;
     Context context;
 
-    public  RecyclerAdapter(Context context, String[] film, String[] sinopsis, int[] img){
-        context = context;
+    public RecyclerAdapterFilm(Context context, String[] film, String[] sinopsis, int[] img){
+        this.context = context;
         judul = film;
         this.sinopsis = sinopsis;
         gambar = img;
@@ -29,16 +29,16 @@ public class RecyclerAdapter<MyViewHolder> extends RecyclerView.Adapter<Recycler
 
     @NonNull
     @Override
-    public RecyclerAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RecyclerAdapterFilm.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.rowitem,parent,false);
-        RecyclerAdapter.MyViewHolder viewHolder = new RecyclerAdapter.MyViewHolder(view);
+        View view = inflater.inflate(R.layout.rowitem_film,parent,false);
+        RecyclerAdapterFilm.MyViewHolder viewHolder = new RecyclerAdapterFilm.MyViewHolder(view);
         return viewHolder;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
-    public void onBindViewHolder(@NonNull RecyclerAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerAdapterFilm.MyViewHolder holder, int position) {
         holder.judul.setText(judul[position]);
         holder.sinopsis.setText(sinopsis[position]);
         holder.gambar.setImageResource(gambar[position]);
