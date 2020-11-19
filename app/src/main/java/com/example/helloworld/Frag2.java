@@ -71,8 +71,8 @@ public class Frag2 extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_frag2, container, false);
         film = getResources().getStringArray(R.array.film_judul);
         sinopsis = getResources().getStringArray(R.array.film_sinopsis);
-        recyclerView = rootView.findViewById(R.id.recyclerView);
-        RecyclerAdapter recycleViewAdapter = new RecyclerAdapter(requireContext(),film,sinopsis,image);
+        recyclerView = rootView.findViewById(R.id.recyclerViewFilm);
+        RecyclerAdapterFilm recycleViewAdapter = new RecyclerAdapterFilm(requireContext(),film,sinopsis,image);
         recyclerView.setAdapter(recycleViewAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
 
